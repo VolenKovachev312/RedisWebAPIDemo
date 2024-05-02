@@ -12,7 +12,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddSqlServer<AppDbContext>(builder.Configuration.GetConnectionString("DbConnection"));
 
-builder.Services.AddScoped<ICacheService, CacheService>();
+builder.Services.AddSingleton<ICacheService, CacheService>();
 
 var app = builder.Build();
 
